@@ -13,10 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // import { PrismaClient } from "@prisma/client";
-const prisma_1 = require("../generated/prisma");
+const client_1 = require("../prisma/app/generated/prisma/client");
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const prisma = new prisma_1.PrismaClient();
+const prisma = new client_1.PrismaClient();
 function deleteAllData(orderedFileNames) {
     return __awaiter(this, void 0, void 0, function* () {
         const modelNames = orderedFileNames.map((fileName) => {
