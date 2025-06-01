@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsers = void 0;
-const edge_1 = require("../../generated/prisma/edge");
-const prisma = new edge_1.PrismaClient();
+const client_1 = require("../../prisma/app/generated/prisma/client");
+const prisma = new client_1.PrismaClient();
 const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const users = yield prisma.users.findMany();
@@ -22,4 +22,4 @@ const getUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.getUsers = getUsers;
-console.log("PrismaClient loaded:", edge_1.PrismaClient);
+console.log("PrismaClient loaded:", client_1.PrismaClient);
