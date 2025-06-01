@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { PrismaClient } from "../../generated/prisma/client";
+import { PrismaClient } from "../../generated/prisma/edge";
 
 const prisma = new PrismaClient();
 
@@ -11,3 +11,5 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
     res.status(500).json({ message: "Error retrieving users" });
   }
 };
+console.log("PrismaClient loaded:", PrismaClient);
+
